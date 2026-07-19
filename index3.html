@@ -1,0 +1,772 @@
+<!-- =========================
+     SIMULADOS
+========================= -->
+
+
+<section id="simulados"
+class="page-section">
+
+
+<div class="section-title">
+
+<h2>
+
+Simulados Cesgranrio
+
+</h2>
+
+<p>
+
+Treine para a Transpetro - Ênfase 4 Informática
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="simulator-config">
+
+
+
+<div class="config-card">
+
+
+<h3>
+
+Quantidade de questões
+
+</h3>
+
+
+<select id="questionQuantity">
+
+
+<option value="20">
+
+20 Questões
+
+</option>
+
+
+<option value="40">
+
+40 Questões
+
+</option>
+
+
+<option value="60">
+
+60 Questões
+
+</option>
+
+
+<option value="80">
+
+80 Questões
+
+</option>
+
+
+<option value="100">
+
+100 Questões
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<div class="config-card">
+
+
+<h3>
+
+Tempo de prova
+
+</h3>
+
+
+<select id="examTime">
+
+
+<option value="60">
+
+60 minutos
+
+</option>
+
+
+<option value="120">
+
+120 minutos
+
+</option>
+
+
+<option value="180">
+
+180 minutos
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<button 
+class="primary-btn"
+id="startSimulation">
+
+
+▶ Iniciar Simulado
+
+
+</button>
+
+
+
+
+
+
+
+
+<!-- ÁREA DA PROVA -->
+
+
+<div 
+id="simulationArea"
+class="simulation-box"
+style="display:none;">
+
+
+
+<div class="simulation-header">
+
+
+<h3>
+
+Questão
+
+<span id="currentQuestion">
+
+1
+
+</span>
+
+</h3>
+
+
+
+<div class="timer">
+
+
+⏱
+
+<span id="timer">
+
+00:00
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div id="questionContent">
+
+
+<!-- Questão carregada pelo JavaScript -->
+
+
+</div>
+
+
+
+
+
+
+<div class="answer-options">
+
+
+<label>
+
+<input type="radio"
+name="answer">
+
+A)
+
+<span></span>
+
+</label>
+
+
+<label>
+
+<input type="radio"
+name="answer">
+
+B)
+
+<span></span>
+
+</label>
+
+
+<label>
+
+<input type="radio"
+name="answer">
+
+C)
+
+<span></span>
+
+</label>
+
+
+<label>
+
+<input type="radio"
+name="answer">
+
+D)
+
+<span></span>
+
+</label>
+
+
+<label>
+
+<input type="radio"
+name="answer">
+
+E)
+
+<span></span>
+
+</label>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="simulation-buttons">
+
+
+<button id="previousQuestion">
+
+⬅ Anterior
+
+</button>
+
+
+<button id="markQuestion">
+
+⭐ Revisar
+
+</button>
+
+
+<button id="nextQuestion">
+
+Próxima ➡
+
+</button>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- =========================
+     QUESTÕES
+========================= -->
+
+
+<section id="questoes"
+class="page-section">
+
+
+
+<div class="section-title">
+
+<h2>
+
+Banco de Questões
+
+</h2>
+
+
+<p>
+
+Resolva questões por disciplina
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="question-filter">
+
+
+<select id="subjectFilter">
+
+
+<option>
+
+Todas disciplinas
+
+</option>
+
+
+<option>
+
+Português
+
+</option>
+
+
+<option>
+
+Matemática
+
+</option>
+
+
+<option>
+
+Informática
+
+</option>
+
+
+</select>
+
+
+
+<button id="generateQuestions">
+
+Gerar Questões
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<div id="questionList">
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+     RESULTADOS
+========================= -->
+
+
+<section id="resultados"
+class="page-section">
+
+
+<div class="section-title">
+
+
+<h2>
+
+Resultados
+
+</h2>
+
+
+<p>
+
+Histórico de desempenho
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="result-cards">
+
+
+
+<div class="result-card">
+
+<h3>
+
+Acertos
+
+</h3>
+
+<strong id="correctAnswers">
+
+0
+
+</strong>
+
+
+</div>
+
+
+
+
+<div class="result-card">
+
+<h3>
+
+Erros
+
+</h3>
+
+<strong id="wrongAnswers">
+
+0
+
+</strong>
+
+
+</div>
+
+
+
+
+
+<div class="result-card">
+
+<h3>
+
+Nota
+
+</h3>
+
+<strong id="finalScore">
+
+0%
+
+</strong>
+
+
+</div>
+
+
+
+
+<div class="result-card">
+
+<h3>
+
+Tempo
+
+</h3>
+
+<strong id="finalTime">
+
+00:00
+
+</strong>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="answer-review">
+
+
+<h3>
+
+Gabarito
+
+</h3>
+
+
+<div id="answerKey">
+
+
+Nenhum simulado realizado.
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<button 
+class="download-btn"
+id="downloadSpreadsheet">
+
+
+📥 Baixar Planilha de Resultados
+
+
+</button>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- =========================
+     CONFIGURAÇÕES
+========================= -->
+
+
+<section id="configuracoes"
+class="page-section">
+
+
+<div class="section-title">
+
+
+<h2>
+
+Configurações
+
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="settings-box">
+
+
+
+<button id="backupData">
+
+💾 Fazer Backup
+
+
+</button>
+
+
+
+<button id="restoreData">
+
+📂 Restaurar Backup
+
+
+</button>
+
+
+
+<button id="resetProgress">
+
+🗑 Resetar Progresso
+
+
+</button>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+     SOBRE
+========================= -->
+
+
+<section id="sobre"
+class="page-section">
+
+
+<div class="about-box">
+
+
+<h2>
+
+Sobre o Projeto
+
+</h2>
+
+
+<p>
+
+Simulador de estudos desenvolvido para preparação do concurso Transpetro 2026 - Ênfase 4 Informática.
+
+</p>
+
+
+<p>
+
+Conteúdo baseado no edital técnico de nível médio.
+
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+
+<footer class="footer">
+
+
+<p>
+
+© 2026 - Simulador Transpetro Informática
+
+</p>
+
+
+<p>
+
+Preparação CESGRANRIO
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+
+<script src="questions.js"></script>
+
+<script src="app.js"></script>
+
+
+
+</body>
+
+
+</html>
