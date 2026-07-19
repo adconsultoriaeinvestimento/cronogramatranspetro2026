@@ -7,29 +7,15 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#005BAC">
-
-<meta name="description"
-content="Simulador Transpetro 2026 - Ênfase 4 Informática">
-
 <title>
-Simulador Transpetro 2026 | Ênfase 4 Informática
+Simulador Transpetro 2026 - Ênfase 4 Informática
 </title>
 
 
-<!-- PWA -->
+<meta name="theme-color" content="#005BAC">
 
-<link rel="manifest" href="manifest.json">
-
-
-<!-- CSS PRINCIPAL -->
 
 <link rel="stylesheet" href="style.css">
-
-
-<!-- ÍCONES -->
-
-<link rel="icon" href="assets/favicon.ico">
 
 
 </head>
@@ -38,64 +24,21 @@ Simulador Transpetro 2026 | Ênfase 4 Informática
 <body>
 
 
-<!-- =========================
-     CABEÇALHO
-========================= -->
-
-
-<header class="top-header">
-
-
-<div class="logo-area">
-
-<div class="logo-circle">
-
-TI
-
-</div>
-
-
-<div>
+<header class="top">
 
 <h1>
-SIMULADOR TRANSPETRO 2026
+🚢 Simulador Transpetro 2026
 </h1>
 
-<p>
+
+<h2>
 Ênfase 4 - Informática
+</h2>
+
+
+<p>
+Preparação Técnico de Informática - Modelo Cesgranrio
 </p>
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="header-actions">
-
-
-<button id="darkModeBtn">
-
-🌙
-
-Modo Escuro
-
-</button>
-
-
-<button id="profileBtn">
-
-👤
-
-Perfil
-
-</button>
-
-
-</div>
-
 
 
 </header>
@@ -104,276 +47,90 @@ Perfil
 
 
 
-<!-- =========================
-     MENU LATERAL
-========================= -->
+<nav class="menu">
 
 
-<aside class="sidebar">
+<button onclick="showSection('inicio')">
+🏠 Início
+</button>
 
 
-<nav>
+<button onclick="showSection('cronograma')">
+📚 Cronograma
+</button>
 
 
-<ul>
+<button onclick="showSection('conteudos')">
+📖 Conteúdos
+</button>
 
 
-<li class="active">
-
-<a href="#dashboard">
-
-📊 Dashboard
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="#cronograma">
-
-📅 Cronograma
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="#plano">
-
-📚 Plano de Estudos
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="#simulados">
-
+<button onclick="showSection('simulado')">
 📝 Simulados
-
-</a>
-
-</li>
+</button>
 
 
-
-<li>
-
-<a href="#questoes">
-
-❓ Questões
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="#resultados">
-
-📈 Resultados
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="#estatisticas">
-
-📊 Estatísticas
-
-</a>
-
-</li>
-
-
-
-<li>
-
-<a href="#configuracoes">
-
-⚙ Configurações
-
-</a>
-
-</li>
-
-
-</ul>
+<button onclick="showSection('resultado')">
+📊 Resultados
+</button>
 
 
 </nav>
 
 
-</aside>
+
+
+
+
+
+
+<main>
 
 
 
 
 
 <!-- =========================
-     CONTEÚDO PRINCIPAL
+INICIO
 ========================= -->
 
 
-<main class="main-content">
-
-
-
-<!-- =========================
-     DASHBOARD
-========================= -->
-
-
-<section id="dashboard"
-class="page-section">
-
-
-<div class="section-title">
+<section id="inicio" class="page">
 
 
 <h2>
-
-Dashboard
-
+Dashboard de Estudos
 </h2>
 
 
-<p>
 
-Acompanhe sua preparação para a Transpetro 2026
-
-</p>
-
-
-</div>
-
-
-
-
-
-<!-- CARDS PRINCIPAIS -->
-
-
-<div class="dashboard-cards">
-
+<div class="cards">
 
 
 <div class="card">
 
-
-<div class="card-icon">
-
-📅
-
-</div>
-
-
-<div>
-
-
 <h3>
-
-Dias para prova
-
+Dias até prova
 </h3>
-
 
 <strong id="daysRemaining">
-
 --
-
 </strong>
 
-
 </div>
-
-
-</div>
-
 
 
 
 
 <div class="card">
 
-
-<div class="card-icon">
-
-⏱
-
-</div>
-
-
-<div>
-
-
 <h3>
-
-Horas estudadas
-
-</h3>
-
-
-<strong id="studyHours">
-
-0h
-
-</strong>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<div class="card-icon">
-
-🎯
-
-</div>
-
-
-<div>
-
-
-<h3>
-
 Questões resolvidas
-
 </h3>
 
-
-<strong id="questionsSolved">
-
+<strong id="questionsDone">
 0
-
 </strong>
-
-
-</div>
-
 
 </div>
 
@@ -383,31 +140,14 @@ Questões resolvidas
 
 <div class="card">
 
-
-<div class="card-icon">
-
-🏆
-
-</div>
-
-
-<div>
-
-
 <h3>
-
-Taxa de acerto
-
+Desempenho
 </h3>
 
-
-<strong id="accuracy">
-
+<strong id="performance">
 0%
-
 </strong>
 
-
 </div>
 
 
@@ -415,34 +155,20 @@ Taxa de acerto
 
 
 
-</div>
-
-
-
-
-
-
-
-<!-- PROGRESSO GERAL -->
 
 
 <div class="progress-box">
 
-
 <h3>
-
 Progresso Geral
-
 </h3>
 
 
+<div class="progress">
 
-<div class="progress-container">
+<div id="progressBar">
 
-
-<div 
-class="progress-bar"
-id="generalProgress">
+</div>
 
 </div>
 
@@ -451,14 +177,11 @@ id="generalProgress">
 
 
 
-<p id="progressText">
 
-0% concluído
-
-</p>
+<canvas id="studyChart"></canvas>
 
 
-</div>
+</section>
 
 
 
@@ -467,89 +190,238 @@ id="generalProgress">
 
 
 
-<!-- METAS -->
 
 
-<div class="goal-grid">
+<!-- =========================
+CRONOGRAMA
+========================= -->
+
+
+<section id="cronograma" class="page hidden">
+
+
+<h2>
+Cronograma até Dezembro 2026
+</h2>
 
 
 
-<div class="goal-card">
+<div class="timeline">
 
+
+<div>
 
 <h3>
-
-Meta Semanal
-
+Fase 1 - Base
 </h3>
 
+<p>
+Português + Matemática + Informática básica
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+Fase 2 - Conhecimentos Técnicos
+</h3>
+
+<p>
+Programação, Banco de Dados, Redes e Segurança
+</p>
+
+</div>
+
+
+
+
+<div>
+
+<h3>
+Fase 3 - Revisões
+</h3>
+
+<p>
+Questões Cesgranrio + simulados completos
+</p>
+
+</div>
+
+
+
+
+<div>
+
+<h3>
+Fase 4 - Reta Final
+</h3>
+
+<p>
+100 questões por simulado e revisão dos erros
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+CONTEÚDOS
+========================= -->
+
+
+<section id="conteudos" class="page hidden">
+
+
+<h2>
+Conteúdo Ênfase 4 - Informática
+</h2>
+
+
+
+<div class="content-grid">
+
+
+<div class="topic">
+
+<h3>
+💻 Programação
+</h3>
+
+<p>
+Python 3.8<br>
+Java<br>
+JavaScript ES2020<br>
+HTML5<br>
+XML<br>
+Engenharia de Software
+</p>
+
+</div>
+
+
+
+
+<div class="topic">
+
+<h3>
+🗄 Banco de Dados
+</h3>
 
 <p>
 
-Questões:
-
-<span id="weeklyGoal">
-
-0 / 100
-
-</span>
+Modelo ER<br>
+Modelo Relacional<br>
+SQL<br>
+Independência de dados
 
 </p>
-
 
 </div>
 
 
 
 
-<div class="goal-card">
 
+<div class="topic">
 
 <h3>
-
-Meta Mensal
-
+🖥 Sistemas Operacionais
 </h3>
-
 
 <p>
 
-Horas:
-
-<span id="monthlyGoal">
-
-0 / 80
-
-</span>
+Linux<br>
+Windows 11<br>
+Processos<br>
+Memória<br>
+Sistemas de arquivos
 
 </p>
-
 
 </div>
 
 
 
 
-<div class="goal-card">
 
+
+<div class="topic">
 
 <h3>
-
-Nível Atual
-
+🌐 Redes
 </h3>
-
 
 <p>
 
-<span id="studentLevel">
-
-Iniciante
-
-</span>
+Modelo OSI<br>
+TCP/IP<br>
+IPv4<br>
+IPv6<br>
+Equipamentos
 
 </p>
 
+</div>
+
+
+
+
+
+
+<div class="topic">
+
+<h3>
+🔐 Segurança
+
+</h3>
+
+<p>
+
+Firewall<br>
+VPN<br>
+Criptografia<br>
+Malwares<br>
+ISO 27002
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="topic">
+
+<h3>
+⚙ Gestão TI
+
+</h3>
+
+<p>
+
+ITIL 4<br>
+COBIT 2019<br>
+Projetos<br>
+MS Project
+
+</p>
 
 </div>
 
@@ -558,32 +430,188 @@ Iniciante
 </div>
 
 
+</section>
 
 
 
 
-<!-- ÚLTIMA ATIVIDADE -->
 
 
-<div class="activity-box">
+
+
+
+<!-- =========================
+SIMULADO
+========================= -->
+
+
+<section id="simulado" class="page hidden">
+
+
+<h2>
+Simulado Cesgranrio
+</h2>
+
+
+
+
+<div class="simulation-config">
+
+
+<label>
+Quantidade de questões:
+</label>
+
+
+<select id="questionQuantity">
+
+
+<option value="20">
+20 Questões
+</option>
+
+
+<option value="40">
+40 Questões
+</option>
+
+
+<option value="60">
+60 Questões
+</option>
+
+
+<option value="80">
+80 Questões
+</option>
+
+
+<option value="100">
+100 Questões
+</option>
+
+
+</select>
+
+
+
+
+
+<label>
+Tempo:
+
+</label>
+
+
+<select id="examTime">
+
+
+<option value="60">
+60 minutos
+</option>
+
+
+<option value="120">
+120 minutos
+</option>
+
+
+<option value="180">
+180 minutos
+</option>
+
+
+</select>
+
+
+
+
+<button id="startSimulation">
+
+▶ Iniciar Simulado
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div id="simulationArea" class="hidden">
+
+
+<div class="exam-header">
 
 
 <h3>
-
-Última atividade
+Questão 
+<span id="currentQuestion">
+1
+</span>
 
 </h3>
 
 
-<p id="lastActivity">
+<h3 id="timer">
 
-Nenhuma atividade registrada.
+00:00
 
-</p>
+</h3>
 
 
 </div>
 
+
+
+
+
+<div id="questionContent">
+
+</div>
+
+
+
+<div class="answer-options">
+
+</div>
+
+
+
+
+
+<div class="buttons">
+
+
+<button id="previousQuestion">
+
+⬅ Anterior
+
+</button>
+
+
+<button id="markQuestion">
+
+⭐ Revisar
+
+</button>
+
+
+<button id="nextQuestion">
+
+Próxima ➡
+
+</button>
+
+
+</div>
+
+
+
+</div>
 
 
 
@@ -593,5 +621,115 @@ Nenhuma atividade registrada.
 
 
 
-<!-- FIM PARTE 1 -->
 
+
+
+
+<!-- =========================
+RESULTADOS
+========================= -->
+
+
+<section id="resultado" class="page hidden">
+
+
+<h2>
+Resultado do Simulado
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+Acertos
+</h3>
+
+<strong id="correctAnswers">
+0
+</strong>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Erros
+</h3>
+
+<strong id="wrongAnswers">
+0
+</strong>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+Nota
+
+</h3>
+
+<strong id="finalScore">
+0%
+</strong>
+
+</div>
+
+
+</div>
+
+
+
+<h3>
+Gabarito
+</h3>
+
+
+<div id="answerKey">
+
+</div>
+
+
+
+</section>
+
+
+
+
+</main>
+
+
+
+
+
+
+<footer>
+
+<p>
+Projeto de preparação Transpetro 2026 - Ênfase 4 Informática
+</p>
+
+</footer>
+
+
+
+
+
+
+<script src="questions.js"></script>
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>
