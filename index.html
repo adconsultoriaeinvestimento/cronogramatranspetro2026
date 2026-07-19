@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#005BAC">
+
+<meta name="description"
+content="Simulador Transpetro 2026 - Ênfase 4 Informática">
+
+<title>
+Simulador Transpetro 2026 | Ênfase 4 Informática
+</title>
+
+
+<!-- PWA -->
+
+<link rel="manifest" href="manifest.json">
+
+
+<!-- CSS PRINCIPAL -->
+
+<link rel="stylesheet" href="style.css">
+
+
+<!-- ÍCONES -->
+
+<link rel="icon" href="assets/favicon.ico">
+
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+
+<header class="top-header">
+
+
+<div class="logo-area">
+
+<div class="logo-circle">
+
+TI
+
+</div>
+
+
+<div>
+
+<h1>
+SIMULADOR TRANSPETRO 2026
+</h1>
+
+<p>
+Ênfase 4 - Informática
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="header-actions">
+
+
+<button id="darkModeBtn">
+
+🌙
+
+Modo Escuro
+
+</button>
+
+
+<button id="profileBtn">
+
+👤
+
+Perfil
+
+</button>
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+<!-- =========================
+     MENU LATERAL
+========================= -->
+
+
+<aside class="sidebar">
+
+
+<nav>
+
+
+<ul>
+
+
+<li class="active">
+
+<a href="#dashboard">
+
+📊 Dashboard
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="#cronograma">
+
+📅 Cronograma
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="#plano">
+
+📚 Plano de Estudos
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="#simulados">
+
+📝 Simulados
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="#questoes">
+
+❓ Questões
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="#resultados">
+
+📈 Resultados
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="#estatisticas">
+
+📊 Estatísticas
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="#configuracoes">
+
+⚙ Configurações
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+</nav>
+
+
+</aside>
+
+
+
+
+
+<!-- =========================
+     CONTEÚDO PRINCIPAL
+========================= -->
+
+
+<main class="main-content">
+
+
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+
+<section id="dashboard"
+class="page-section">
+
+
+<div class="section-title">
+
+
+<h2>
+
+Dashboard
+
+</h2>
+
+
+<p>
+
+Acompanhe sua preparação para a Transpetro 2026
+
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- CARDS PRINCIPAIS -->
+
+
+<div class="dashboard-cards">
+
+
+
+<div class="card">
+
+
+<div class="card-icon">
+
+📅
+
+</div>
+
+
+<div>
+
+
+<h3>
+
+Dias para prova
+
+</h3>
+
+
+<strong id="daysRemaining">
+
+--
+
+</strong>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<div class="card-icon">
+
+⏱
+
+</div>
+
+
+<div>
+
+
+<h3>
+
+Horas estudadas
+
+</h3>
+
+
+<strong id="studyHours">
+
+0h
+
+</strong>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<div class="card-icon">
+
+🎯
+
+</div>
+
+
+<div>
+
+
+<h3>
+
+Questões resolvidas
+
+</h3>
+
+
+<strong id="questionsSolved">
+
+0
+
+</strong>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<div class="card-icon">
+
+🏆
+
+</div>
+
+
+<div>
+
+
+<h3>
+
+Taxa de acerto
+
+</h3>
+
+
+<strong id="accuracy">
+
+0%
+
+</strong>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- PROGRESSO GERAL -->
+
+
+<div class="progress-box">
+
+
+<h3>
+
+Progresso Geral
+
+</h3>
+
+
+
+<div class="progress-container">
+
+
+<div 
+class="progress-bar"
+id="generalProgress">
+
+</div>
+
+
+</div>
+
+
+
+<p id="progressText">
+
+0% concluído
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- METAS -->
+
+
+<div class="goal-grid">
+
+
+
+<div class="goal-card">
+
+
+<h3>
+
+Meta Semanal
+
+</h3>
+
+
+<p>
+
+Questões:
+
+<span id="weeklyGoal">
+
+0 / 100
+
+</span>
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="goal-card">
+
+
+<h3>
+
+Meta Mensal
+
+</h3>
+
+
+<p>
+
+Horas:
+
+<span id="monthlyGoal">
+
+0 / 80
+
+</span>
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="goal-card">
+
+
+<h3>
+
+Nível Atual
+
+</h3>
+
+
+<p>
+
+<span id="studentLevel">
+
+Iniciante
+
+</span>
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- ÚLTIMA ATIVIDADE -->
+
+
+<div class="activity-box">
+
+
+<h3>
+
+Última atividade
+
+</h3>
+
+
+<p id="lastActivity">
+
+Nenhuma atividade registrada.
+
+</p>
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+<!-- FIM PARTE 1 -->
+
